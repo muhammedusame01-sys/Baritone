@@ -1,0 +1,17 @@
+plugins { id 'fabric-loom' version '1.14-SNAPSHOT' }
+version = '1.0.0'
+base { archivesName = 'miningtweaks' }
+repositories { mavenCentral() }
+dependencies {
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    mappings loom.officialMojangMappings()
+    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+    modCompileOnly files('baritone-fabric-1_21_11.jar')
+}
+sourceSets { main {
+    java { srcDirs = ['.']; include 'MiningTweaks.java' }
+    resources { srcDirs = ['.']; include 'fabric.mod.json' }
+} }
+java { sourceCompatibility = JavaVersion.VERSION_21; targetCompatibility = JavaVersion.VERSION_21 }
+tasks.withType(JavaCompile).configureEach { options.release = 21 }

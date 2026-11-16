@@ -1,0 +1,3 @@
+{"schemaVersion":1,"id":"miningtweaks","version":"1.0.0","name":"Mining Tweaks","environment":"client",
+ "entrypoints":{"client":["miningtweaks.MiningTweaks"]},
+ "depends":{"fabricloader":">=0.16.0","minecraft":"1.21.11","baritone":"*","java":">=21"}}
